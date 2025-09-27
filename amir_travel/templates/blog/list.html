@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="h3">مدونة السياحة</h1>
+<div class="list-group">
+  {% for post in posts %}
+  <a class="list-group-item list-group-item-action" href="/blog/{{ post.slug }}">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ post.title }}</h5>
+      <small class="text-muted">{{ post.created_at.date() }}</small>
+    </div>
+  </a>
+  {% else %}
+  <p>لا مقالات بعد.</p>
+  {% endfor %}
+</div>
+{% endblock %}

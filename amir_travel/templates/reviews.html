@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="h3">تقييمات العملاء</h1>
+<div class="row g-3">
+  {% for r in reviews %}
+  <div class="col-md-4">
+    <div class="border rounded p-3 h-100">
+      <div class="d-flex justify-content-between">
+        <strong>{{ r.name }}</strong>
+        <span class="text-warning">{'★'*r.rating}{% for i in range(5-r.rating) %}☆{% endfor %}</span>
+      </div>
+      <p class="mb-0 mt-2">{{ r.comment }}</p>
+      <small class="text-muted">{{ r.created_at.date() }}</small>
+    </div>
+  </div>
+  {% else %}
+  <p>لا توجد تقييمات بعد.</p>
+  {% endfor %}
+</div>
+{% endblock %}

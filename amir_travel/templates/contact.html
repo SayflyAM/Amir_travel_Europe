@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="h3">تواصل معنا</h1>
+<form method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.name.label(class_='form-label') }}
+    {{ form.name(class_='form-control') }}
+    {% for e in form.name.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.email.label(class_='form-label') }}
+    {{ form.email(class_='form-control') }}
+    {% for e in form.email.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+  </div>
+  <div class="mb-3">
+    {{ form.message.label(class_='form-label') }}
+    {{ form.message(class_='form-control', rows=5) }}
+    {% for e in form.message.errors %}<div class="text-danger small">{{ e }}</div>{% endfor %}
+  </div>
+  <button class="btn btn-primary">إرسال</button>
+  <a class="btn btn-success" href="https://wa.me/971565598682" target="_blank">رسالة واتساب</a>
+</form>
+{% endblock %}

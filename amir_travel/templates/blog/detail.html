@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="prose">
+  <h1 class="h3">{{ post.title }}</h1>
+  <div class="text-muted mb-3">نُشر في {{ post.created_at.date() }}</div>
+  <div>{{ post.content|safe }}</div>
+</article>
+{% endblock %}

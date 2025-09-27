@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row align-items-center hero-gradient p-4" data-aos="fade-up">
+  <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+    <h1 class="display-5 fw-bold">أمير للسفر والسياحة</h1>
+    <p class="lead">سافر بأمان وراحة مع سائق عربي خبير في أوروبا. برامج عائلية، شهر عسل، ومغامرات مصممة خصيصاً لك.</p>
+    <div class="d-flex gap-2">
+      <a href="/trips" class="btn btn-primary btn-lg">استكشف الرحلات</a>
+      <a href="https://wa.me/971565598682" target="_blank" class="btn btn-success btn-lg">احجز عبر واتساب</a>
+    </div>
+    <p class="mt-3 mb-0">واتساب مباشر: <a href="https://wa.me/971565598682" target="_blank">00971565598682</a></p>
+  </div>
+  <div class="col-md-6 text-center" data-aos="zoom-in" data-aos-delay="150">
+    <img src="{{ url_for('static', filename='img/hero.svg') }}" alt="Amir travel Europe" class="img-fluid">
+  </div>
+</div>
+
+<section class="mt-5" data-aos="fade-up">
+  <h2 class="h4 mb-3">لماذا تختارنا؟</h2>
+  <ul>
+    <li>سائقون عرب بخبرة أوروبية ولغات متعددة.</li>
+    <li>برامج مرنة تناسب العائلات والأزواج والمغامرين.</li>
+    <li>دعم على مدار الساعة واتساب وهاتف.</li>
+  </ul>
+</section>
+{% endblock %}

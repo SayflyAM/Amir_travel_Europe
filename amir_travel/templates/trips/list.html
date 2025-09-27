@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="h3">الرحلات</h1>
+<form class="row g-2 mb-3" method="get">
+  <div class="col-md-3">
+    <select name="country" class="form-select">
+      <option value="">الدولة</option>
+      {% for c in countries %}
+      <option value="{{ c }}" {{ 'selected' if request.args.get('country') == c else '' }}>{{ c }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-3">
+    <select name="type" class="form-select">
+      <option value="">النوع</option>
+      {% for t in types %}
+      <option value="{{ t }}" {{ 'selected' if request.args.get('type') == t else '' }}>{{ t }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-3">
+    <input class="form-control" type="number" name="duration" placeholder="المدة (أيام)" value="{{ request.args.get('duration','') }}">
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-primary w-100">تصفية</button>
+  </div>
+</form>
+
+<div class="row g-3">
+  {% for trip in trips %}
+  <div class="col-md-4" data-aos="fade-up">
+    <div class="card h-100">
+      <div class="ratio ratio-16x9 bg-light"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{ trip.title }}</h5>
+        <p class="card-text">{{ trip.country }} • {{ trip.trip_type }} • {{ trip.duration_days }} يوم</p>
+        <p class="fw-bold">ابتداءً من {{ '%.0f'|format(trip.price) }} €</p>
+        <a href="/trips/{{ trip.id }}" class="btn btn-outline-primary">التفاصيل</a>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p>لا توجد رحلات مطابقة حالياً.</p>
+  {% endfor %}
+</div>
+{% endblock %}

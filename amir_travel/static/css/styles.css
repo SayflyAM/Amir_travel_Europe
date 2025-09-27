@@ -1,0 +1,24 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Noto Kufi Arabic', 'Noto Sans Arabic', 'Cairo', Tahoma, Arial, sans-serif; }
+.navbar-brand { color: #e67e22 !important; }
+.btn-primary { background-color: #e67e22; border-color: #e67e22; }
+.btn-outline-primary { color: #e67e22; border-color: #e67e22; }
+.btn-outline-primary:hover { background-color: #e67e22; color: #fff; }
+
+/* Hero gradient section helper */
+.hero-gradient {
+	background: radial-gradient(1200px 400px at 10% -10%, #ffe8cc 10%, transparent 60%),
+							radial-gradient(1000px 400px at 90% 0%, #fff1e0 10%, transparent 60%),
+							linear-gradient(180deg, #fff, #fff);
+	border-radius: 1rem;
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); transition: all .25s ease; }
+
+/* Floating WhatsApp */
+.whatsapp-float {
+	position: fixed; right: 16px; bottom: 16px; z-index: 1050;
+	width: 56px; height: 56px; border-radius: 50%;
+	background-color: #25D366; color: #fff; display: grid; place-items: center;
+	box-shadow: 0 8px 24px rgba(37,211,102,.35);
+}
+.whatsapp-float:hover { filter: brightness(1.05); color: #fff; }
